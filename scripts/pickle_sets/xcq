@@ -1,0 +1,4 @@
+#BSUB -q medium
+#BSUB -J 3MGPQ
+
+python /home/inmegen/r.garcia/100g/scripts/bed2pickledset_snp.py /home/inmegen/r.garcia/100g/beds/3MGPQ.bed

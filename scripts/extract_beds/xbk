@@ -1,0 +1,4 @@
+#BSUB -q medium
+#BSUB -J 3MG3M
+
+zcat /home/inmegen/r.garcia/100g/SM-3MG3M/SNP/SM-3MG3M.samtools.snp.reformated.vcf.gz | grep -v \# | awk '{print $1,$2,$4,$5}' > /home/inmegen/r.garcia/100g/beds/3MG3M.bed
