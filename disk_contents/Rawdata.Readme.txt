@@ -1,0 +1,39 @@
+The original raw data or raw reads obtained from high throughput sequencing platforms(e.g. illumina HiSeqTMXTen/2000/MiSeq) .Raw data is recorded in FASTQ file, which contains sequence information (reads) and corresponding sequencing quality information.
+
+This folder contains the raw data of each sample£º
+1.*.fq.gz		The original compressed FASTQ file from high-throughput sequencing
+In file name,1,2 stands for paired-end sequences files,respectively
+
+2.MD5.txt		The MD5 value of compressed FASTQ file,used to check the file integrity
+===========================================================================================================================
+
+The explanations of fq.gz file are as follows:
+
+1.The original raw data obtained from high throughput sequencing platforms(e.g. illumina HiSeqTMXTen/2000/MiSeq) is transformed to sequenced reads by base calling. Raw data is recorded in FASTQ file, which contains sequence information (reads) and corresponding sequencing quality information. Every read in FASTQ format is stored in four lines as follows:
+@HWI-ST1276:71:C1162ACXX:1:1101:1208:2458 2:N:0:CGATGT
+CTGGCTCCGGAGGGGATGGAGGCGGCACTCCCGCCAAGGATGCGTTGGGAAACGACGTCGTTGCAGTCGAATGGCTCAAAACACACGGGCCCGGTGACCGG
++
+BCBFFFFDHHHHHJJ?EAGIIIAHIJIIGHHHBEDCDDD;>>BD?BDAD<><?BDB@5<BBDCDDDCDDBDCCDDDCCDDD8?AAB9>B55>BB5904@BB
+
+Line 1 begins with a '@' character and is followed by a sequence identifier and an optional description (like a FASTA title line).
+Line 2 is the raw sequence reads. 
+Line 3 begins with a '+' character and is optionally followed by the same sequence identifier (and any description) again.
+Line 4 encodes the quality values for the sequence in Line 2, and must contain the same number of characters as bases in the sequence.
+
+
+Illumina sequence identifier details:
+
+	HWI-ST1276	Unique instrument name 
+	71		Run ID
+	C1162ACXX	Flowcell ID
+	1		Flowcell lane
+	1101		Tile number within the flowcell lane
+	1208		'x'-coordinate of the cluster within the tile
+	2458		'y'-coordinate of the cluster within the tile
+	2		Member of a pair, 1 or 2 (paired-end or mate-pair reads only)
+	N		Y if the read fails filter (read is bad), N otherwise
+	0		0 when none of the control bits are on, otherwise it is an even number
+	CGATGT		Index sequence
+
+
+

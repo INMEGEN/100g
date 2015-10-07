@@ -1,0 +1,54 @@
+CNV (copy number variation) refers to the increase or reduction of copy number of large fragment in the genome and is a very important molecular mechanism. There are two types of CNV: deletion and duplication. Abnormal CNV change can be the cause of many diseases. Thus, it has already been the hotspot of disease study. Usually, we use control-freec software to detect CNV.
+CNV folder contain these two files:
+1.*.final.bam_CNVs.final.gff			the result of SV£¬GFF£¨General Feature Format£©format
+2.*.final.bam_CNVs.final.hg19_multianno.xls	the annotation result of CNV (xls format)£¬excel or EditPlus can be used for opening the file when the file is larger.
+=============================================================================================================================
+For *.final.bam_CNVs.final.gff file, each column annotation information is as follows:
+
+	(1) chromosome 
+	(2) The software to detect SV is Control-FREEC
+	(3) CNV type(such as: gain, loss)
+	(4) the start position of CNV on chromosome
+	(5) the end position of CNV on chromosome
+	(6) the score of CNV ¡®.¡¯stand for the score is unknown
+	(7) the strand of CNV  ¡®.¡¯stands for the strand information is unknown.
+        (8) ORF: when the third column equals ¡®exon¡¯, this column has value, othersise the value is '.'
+        (9)The information of CNV: CopyNumber: copy number ; Size :the size of the CNV region; CNVID: the ID of CNV CNVType: the type of CNV(loss£ºreduction of copy number(deletion),gain£ºincrease of copy number(duplication), breakpoint: the breakpoint of CNV)
+
+For *.final.bam_CNVs.final.hg19_multianno.xls file, each column annotation information is as follows:
+
+	(1) Chr£ºchromosome
+	(2) Start£ºthe start position of variation on chromosome.
+	(3) End£ºthe end position of variation on chromosome
+	(4) Ref£ºbase at this position in reference genome, here is empty
+	(5) Alt£ºbase at this position in sequencing data,, here is empty
+	(6) GeneName£ºthe names of genes related to this variation
+	(7) Func£ºtells whether the variant hit exons or hit intergenic regions, or hit introns, or hit a non-coding RNA genes.
+	(8) Gene£ºthe IDs of transcript whose function has changed like the value in column ¡®Func¡¯.
+	(9) GeneDetail£ºdescription of variations in UTR, splicing, ncRNA, splicing or intergenic.
+	(10) ExonicFunc£ºthe amino acid changes as a result of the exonic variant.
+	(11) AAChange£ºwhen ¡®Func¡¯ equals ¡®exonic¡¯or ¡®exonic;splicing¡¯, this value gives the change of amino acid in each related transcript.
+	(12) Gencode£ºgene name in Gencode.
+	(13) cpgIslandExt£ºthe result of predition of CpG islands
+	(14) cytoBand£ºchromosomal segments in which the CNV (using Giemas staining obtained). If the variable sites across multiple segments, connected by a dash.
+	(15) wgRna£ºBased miRBase and snoRNABase, related to variable sites and snoRNA microRNA annotation, gene name given microRNA and snoRNA.
+	(16) targetScanS£ºmiRNA target prediction by TargetScan.
+	(17) phastConsElements46way£ºthe conservative region predicted by phastCons basing on the whole genome alignment of vertebrates; 46way means the number of used species.
+	(18) tfbsConsSites£ºtranscript factor binding site that are conservative in human, mouse and rat; this is acquired from transfac matrix database(v7.0).
+	(19) genomicSuperDups£ºrepetitive segments in genome. For a region to be included in the track, at least 1 Kb of the total sequence (containing at least 500 bp of non-RepeatMasked sequence) had to align and a sequence identity of at least 90% was required.
+	(20) dgvMerged£ºannotation from Database of Genomic Variants.
+	(21) gwasCatalog£ºtells whether this variation has been identified by published Genome-Wide Association Studies (GWAS), collected in the Catalog of Published Genome-Wide Association Studies at the National Human Genome Research Institute (NHGRI). It lists the diseases related to this variation. ¡°.¡± means this vatiation has not been reported by published GWAS study.
+	(22) Repeat£ºannotation of repeats from RepeatMasker program.
+	(23) encodeGm12878£ºpredicted functional elements in the genome of cell line Gm12878. ChromHMM was used to get twenty-five states by integrating ENCODE ChIP-seq, DNase-seq, and FAIRE-seq data; these states were used to segment the genome, and they were then grouped and colored to highlight predicted functional elements. (The relationship between state and functional element is as follow: Tss, TssF¡ª¡ªActive Promoter; PromF¡ª¡ªPromoter Flanking; PromP¡ª¡ªInactive Promoter; Enh, EnhF¡ª¡ªCandidate Strong enhancer; EnhWF, EnhW, DNaseU, DNaseD, FaireW¡ª¡ªCandidate Weak enhancer/DNase; CtrcfO, Ctcf¡ª¡ªDistal CTCF/Candidate Insulator; Gen5', Elon, ElonW, Gen3', Pol2, H4K20¡ª¡ªTranscription associated; Low¡ª¡ªLow activity proximal to active states; ReprD, Repr, ReprW¡ª¡ªPolycob repressed; Quies, Art¡ª¡ªHeterochromatin/Repetitive/Copy Number Variation)
+	(24) encodeH1hesc£ºpredicted functional elements in the genome of cell line H1-hESC.
+	(25) encodeHelas3£ºpredicted functional elements in the genome of cell line HeLa-S3.
+	(26) encodeHepg2£ºpredicted functional elements in the genome of cell line HepG2.
+	(27) encodeHuvec£ºpredicted functional elements in the genome of cell line HUVEC
+	(28) encodeK562£ºpredicted functional elements in the genome of cell line K562.
+	(29) CopyNumber£ºcopy number
+	(30) Size£º the size of the CNV region
+	(31) CNVID£ºthe ID of CNV
+	(32) CNVType£ºthe type of CNV.
+	     loss£ºreduction of copy number(deletion)
+	     gain£ºincrease of copy number(duplication)
+	     breakpoint£º the breakpoint of CNV

@@ -1,0 +1,18 @@
+Burrows-Wheeler Aligner (BWA)(version 0.7.8-r455)software is utilized to map the paired-end clean reads to the reference genome(UCSC hg19£©. The original mapping result in BAM format can be obtained.
+Final BAM file can be obtained after these steps:(1)SAMtools(Li H et al.) is used to sort the original BAM file (2) Picard is used to mark duplicate reads. We computed the coverage and depth based on the final BAM file.
+If a read or reads pair is mapped to multiple positions, BWA will choose the most likely placement. Other if two or more most likely placement present, BWA will choose one randomly. This multiple hit strategy have significant impact on SNP, INDEL and CNV detection. And high mapping quality is required to guarantee variant calling accuracy (greater than 0). 
+
+This folder contains the mapping result of each sample£º
+
+1.*.bam		The final mapping result in BAM format
+
+2.*.bam.bai	Build an index for bam file, and used to process bam file rapidly
+==========================================================================================================================
+
+
+The explanations of result file are as follows:
+
+1. bam file is obtained by compressing the Sam file,Please refer to SAMv1.pdf for details.
+
+
+2. *.bam.bai file is obtained by command 'samtools index *.bam

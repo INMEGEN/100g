@@ -1,0 +1,78 @@
+We use SAMtools to detect inDel based on BAM file, and the final variation result is obtained by using ANNOVAR to annotate these sites.
+
+
+InDel folder contains two files:
+
+1.*.indel.reformated.vcf.gz                      the annotation result of indel, vcf£¨Variant Call Format£©format
+2.*.indel.annovar.hg19_multianno.xls.gz          the annotation result of indel (compressed format).Unzip the files, excel or EditPlus can be used for opening the file when the file is larger.
+
+
+==========================================================================================================================
+
+The explanations of these files are as follows:
+
+1.VCF (Variant Call Format) file format is stored variation results.
+Begin with # as detailed interpretation of documents.
+
+2.*.indel.annovar.hg19_multianno.xls.gz file is *.snp.reformated.vcf.gz file in xls format, and adds functional annotation from OMIM,GO, KEGG¡¢PID¡¢BIOCARTA¡¢REACTOME database.
+Each column annotation information is as follows:
+
+         CHROM£ºchromosome
+         POS: the position of variation on chromosome.
+         ID: the ID of the variation in dbSNP.
+         REF: base at this position in reference genome.
+         ALT: base at this position in sequencing data.
+         QAUL: variation quality value.
+         FILTER: the TAG of filteration, if the site satisfies all the filteration conditions, mark PASS.
+         GeneName: the names of genes related to this variation
+         Func: tells whether the variant hit exons or hit intergenic regions, or hit introns, or hit a non-coding RNA genes. (exonic, splicing, UTR5, UTR3, intronic, ncRNA_exonic, ncRNA_intronic, ncRNA_UTR3, ncRNA_UTR5, ncRNA _splicing, upstream, downstream, intergenic).
+         Gene: the IDs of transcript whose function has changed like the value in column ¡®Func¡¯.
+         GeneDetail: description of variations in UTR, splicing, ncRNA, splicing or intergenic.
+         ExonicFunc: the amino acid changes as a result of the exonic variant.(synonymous_SNV, missense_SNV, stopgain_SNV, stopgloss_SNV or unknown)
+         AAChange: when ¡®Func¡¯ equals ¡®exonic¡¯or ¡®exonic;splicing¡¯, this value gives the change of amino acid in each related transcript. For example, AIM1L:NM_001039775:exon2:c.C2768T:p.P923L, AIM1L is gene name containing this variation; NM_001039775 is ID of transcript; exon2 means the variation is on the second exon of the transcript; c.C2768T means the 2, 768 base on cDNA is changed from C to T due to this variation; p.P923L means the 923 amino acid on protein is changed from Pro to Leu due to this variation.
+         Gencode: gene name in Gencode.
+         cpgIslandExt: the result of predition of CpG islands.
+         cytoband: chromosome band.
+         wgRna: snoRNA and miRNA annotation.
+         targetScanS: miRNA target prediction by TargetScan.
+         phastConsElements46way: the conservative region predicted by phastCons basing on the whole genome alignment of vertebrates; 46way means the number of used species. 
+         tfbsConsSites: transcript factor binding site that are conservative in human, mouse and rat; this is acquired from transfac matrix database(v7.0).
+         genomicSuperDups: repetitive segments in genome. For a region to be included in the track, at least 1 Kb of the total sequence (containing at least 500 bp of non-RepeatMasked sequence) had to align and a sequence identity of at least 90% was required.
+         dgvMerged: annotation from Database of Genomic Variants.
+         gwasCatalog: tells whether this variation has been identified by published Genome-Wide Association Studies (GWAS), collected in the Catalog of Published Genome-Wide Association Studies at the National Human Genome Research Institute (NHGRI). It lists the diseases related to this variation. ¡°.¡± means this vatiation has not been reported by published GWAS study.
+         Repeat: annotation of repeats from RepeatMasker program.
+         encodeGm12878: predicted functional elements in the genome of cell line Gm12878. ChromHMM was used to get twenty-five states by integrating ENCODE ChIP-seq, DNase-seq, and FAIRE-seq data; these states were used to segment the genome, and they were then grouped and colored to highlight predicted functional elements. (The relationship between state and functional element is as follow: Tss, TssF¡ª¡ªActive Promoter; PromF¡ª¡ªPromoter Flanking; PromP¡ª¡ªInactive Promoter; Enh, EnhF¡ª¡ªCandidate Strong enhancer; EnhWF, EnhW, DNaseU, DNaseD, FaireW¡ª¡ªCandidate Weak enhancer/DNase; CtrcfO, Ctcf¡ª¡ªDistal CTCF/Candidate Insulator; Gen5', Elon, ElonW, Gen3', Pol2, H4K20¡ª¡ªTranscription associated; Low¡ª¡ªLow activity proximal to active states; ReprD, Repr, ReprW¡ª¡ªPolycob repressed; Quies, Art¡ª¡ªHeterochromatin/Repetitive/Copy Number Variation)
+         encodeH1hesc: predicted functional elements in the genome of cell line H1-hESC.
+         encodeHelas3: predicted functional elements in the genome of cell line HeLa-S3.
+         encodeHepg2: predicted functional elements in the genome of cell line HepG2.
+         encodeHuvec: predicted functional elements in the genome of cell line HUVEC.
+         encodeK562: predicted functional elements in the genome of cell line K562.
+         snp138: the ID of this variation in dbSNP(version 138)
+         snp138NonFlagged: tells whether this variation is in snp138NonFlagged. snp138NonFlagged is dbSNP after removing those flagged SNPs ( SNPs < 1% minor allele frequency (MAF) (or unknown), mapping only once to reference assembly, flagged in dbSnp as "clinically associated").
+         1000g2012apr_eur: gives the alternative allele frequency data of this variation in 1000 Genomes Project(published in April, 2012) for european population. ALL, AMR (admixed american), EUR (european), ASN (), AFR (african) populations
+         1000g2012apr_asn: gives the alternative allele frequency data of this variation in 1000 Genomes Project(published in April, 2012) for asian population.
+         1000g2012apr_afr: gives the alternative allele frequency data of this variation in 1000 Genomes Project(published in April, 2012) for african population.
+         1000g2012apr_amr: gives the alternative allele frequency data of this variation in 1000 Genomes Project(published in April, 2012) for admixed american population.
+         1000g2012apr_all: gives the alternative allele frequency data of this variation in 1000 Genomes Project(published in April, 2012) for ALL population.
+         hapmapCHB_allele: gives the allele frequency data of this variation in The HapMap Project for Han Chinese in Beijing, China (CHB).
+         hapmapCHB_genotype: gives the genotype frequency data of this variation in The HapMap Project for Han Chinese in Beijing, China (CHB). 
+         esp6500si_all: gives alternative allele frequency of this variation in all subjects in the NHLBI-ESP project with 6500 exomes.
+         ljb23_sift: whole-exome SIFT scores with missing values imputed (version 2.3) , inccluding raw score, transformed score (0-1, higher values more deleterious, calculated as 1-SIFT) and categorical prediction. The smaller the SIFT raw score is, the more deleterious this variation is.(D: Deleterious (sift<=0.05); T: tolerated (sift>0.05))
+         ljb23_pp2hvar: whole-exome PolyPhen 2 scores built on HumanVar database (for Mendelian phenotypes) , including raw score and categorical prediction. The larger the raw score is, the more deleterious this variation is.(D: Probably damaging (>=0.909), P: possibly damaging (0.447<=pp2_hvar<=0.909); B: benign (pp2_hvar<=0.446))
+         ljb23_pp2hdiv: whole-exome PolyPhen 2 scores built on HumanDiv database (for complex phenotypes) , including raw score and categorical prediction. The larger the raw score is, the more deleterious this variation is.(D: Probably damaging (>=0.957), P: possibly damaging (0.453<=pp2_hdiv<=0.956); B: benign (pp2_hdiv<=0.452))
+         ljb23_mt: whole-exome MutationTaster scores (version 2.3), including raw score, transformed scores (0-1, with higher values more deleterious) and categorical prediction. The larger the transformed score is, the more deleterious this variation is. "A" ("disease_causing_automatic"); "D" ("disease_causing"); "N" ("polymorphism"); "P" ("polymorphism_automatic")
+         ljb23_lrt: whole-exome LRT scores (version 2.3), including raw score, transformed scores (0-1, with higher values more deleterious) and categorical prediction. (D: Deleterious; N: Neutral; U: Unknown)
+         ljb23_metalr: whole-exome MetaLR scores, including raw score and categorical prediction. (D: Deleterious; T: Tolerated) The smaller the raw score is, the more deleterious this variation is.
+         INFO: information about this variation from variation calling software.
+         FORMAT: Comma-separated list of several tags from variation calling software. 
+         GT: Genotype. 0 represents allele same to REF; 1, 2, 3 et. al. represents allele different from REF. 0/0 and 1/1 represent homogeneous genotype. 0/1 represents heterozygous genotype.
+         PL: List of Phred-scaled genotype likelihoods.
+         DP: Number of high-quality bases.
+         DV: Number of high-quality non-reference bases.
+         OMIM: annotation from OMIM database.
+         GO_BP, GO_CC, GO_MF: annotation from Gene Ontology
+         KEGG_PATHWAY: annotation from KEGG.
+         PID_PATHWAY: annotation from PID(the Pathway Interaction Database).
+         BIOCARTA_PATHWAY: annotation from BIOCARTA.
+         REACTOME_PATHWAY: annotation from Reactome Pathway Database.
+
