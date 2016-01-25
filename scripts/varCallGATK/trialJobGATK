@@ -1,0 +1,20 @@
+#BSUB-q min                   # Job queue
+#BSUB-o job.output               # output is sent to file job.output
+#BSUB-e job.err                  # stderr    
+#BSUB-J GATKmap3                 # name of the job
+#BSUB-c 100                      # Time limit in minutes
+#BSUB-n 4                        # slots
+#BSUB-R "span[hosts=1]"          # one node
+
+
+
+# My instructions
+# Changing to the directory where my program is
+cd /home/inmegen/r.garcia/100g/scripts/varCallGATK/scripts
+
+./mapeador3_bamInit.sh /home/inmegen/r.garcia/100g/scripts/varCallGATK/datosIntermedios 2 corridaX panelY M03540
+
+# Show the size of the outputfile, and remove the executable
+#ls -l data/output
+#rm run
+

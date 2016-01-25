@@ -1,0 +1,280 @@
+35782
+INICIO: llamador
+SM-3MG4H
+INFO  11:42:59,341 ProgressMeter -     8:112091486     1.39279569E9    11.7 h           30.0 s       48.0%    24.3 h      12.6 h 
+35783
+INICIO: llamador
+SM-3MG4U
+INFO  11:42:55,237 ProgressMeter -    11:130269770     1.81590789E9    10.9 h           21.0 s       62.0%    17.6 h       6.7 h 
+35784
+INICIO: llamador
+SM-3MG4F
+INFO  11:43:18,541 ProgressMeter -    11:106800796     1.81590789E9    10.9 h           21.0 s       61.3%    17.8 h       6.9 h 
+35785
+INICIO: llamador
+SM-3MG4X
+INFO  11:43:18,462 ProgressMeter -     11:69787159     1.81590789E9    11.0 h           21.0 s       60.1%    18.3 h       7.3 h 
+35787
+INICIO: llamador
+SM-3MG4E
+INFO  11:43:12,994 ProgressMeter -     16:73748159    2.409817111E9    13.1 h           19.0 s       79.2%    16.5 h       3.4 h 
+35788
+INICIO: llamador
+SM-3MG4Q
+INFO  11:43:05,098 ProgressMeter -      9:75686170    1.539159712E9    12.3 h           28.0 s       51.5%    23.9 h      11.6 h 
+35790
+INICIO: llamador
+SM-3MG3Y
+INFO  11:42:59,676 ProgressMeter -     6:148468711     1.06254196E9     9.5 h           32.0 s       38.6%    24.6 h      15.1 h 
+35791
+INICIO: llamador
+SM-3MG4R
+INFO  11:43:20,932 ProgressMeter -      9:83108377    1.539159712E9    12.6 h           29.0 s       51.7%    24.3 h      11.8 h 
+35792
+INICIO: llamador
+SM-3MG53
+INFO  11:43:38,602 ProgressMeter -      7:70069238    1.233657027E9    10.3 h           30.0 s       41.6%    24.9 h      14.5 h 
+35793
+INICIO: llamador
+SM-3MG3P
+INFO  11:43:02,952 ProgressMeter -     9:113293428    1.539159712E9    12.9 h           30.0 s       52.7%    24.5 h      11.6 h 
+35794
+INICIO: llamador
+SM-3MG3V
+INFO  11:42:54,541 ProgressMeter -      9:97884491    1.539159712E9    12.3 h           28.0 s       52.2%    23.5 h      11.2 h 
+35795
+INICIO: llamador
+SM-3MG52
+INFO  11:43:51,009 ProgressMeter -     6:152360454     1.06254196E9     9.8 h           33.0 s       38.7%    25.3 h      15.5 h 
+35796
+INICIO: llamador
+SM-3MG3R
+INFO  11:43:34,915 ProgressMeter -     8:128569246     1.39279569E9    11.7 h           30.0 s       48.5%    24.2 h      12.5 h 
+35799
+INICIO: llamador
+SM-3MG3L
+INFO  11:43:01,456 ProgressMeter -     3:100870771     4.92449994E8     4.9 h           35.0 s       18.9%    25.8 h      21.0 h 
+35800
+INICIO: llamador
+SM-3MG4L
+INFO  11:43:07,139 ProgressMeter -      9:92715579    1.539159712E9    12.6 h           29.0 s       52.0%    24.1 h      11.6 h 
+35801
+INICIO: llamador
+SM-3MG3N
+INFO  11:43:34,010 ProgressMeter -      8:60257257     1.39279569E9    11.3 h           29.0 s       46.3%    24.3 h      13.0 h 
+35802
+INICIO: llamador
+SM-3MG4J
+WARN  11:43:43,594 ExactAFCalculator - this tool is currently set to genotype at most 6 alternate alleles in a given context, but the context at 6:12797272 has 9 alternate alleles so only the top alleles will be used; see the --max_alternate_alleles argument 
+35803
+INICIO: llamador
+SM-3MG4O
+INFO  11:43:50,502 ProgressMeter -     4:139396747     6.90472424E8     6.7 h           34.0 s       26.5%    25.2 h      18.6 h 
+35804
+INICIO: llamador
+SM-3MG47
+INFO  11:43:52,607 ProgressMeter -      9:36982789    1.539159712E9    12.5 h           29.0 s       50.2%    24.8 h      12.3 h 
+35806
+INICIO: llamador
+SM-3MG4G
+INFO  11:43:24,503 ProgressMeter -     7:133188150    1.233657027E9    10.6 h           30.0 s       43.6%    24.3 h      13.7 h 
+35807
+INICIO: llamador
+SM-3MG4C
+INFO  11:43:23,925 ProgressMeter -     7:108632163    1.233657027E9    10.4 h           30.0 s       42.8%    24.3 h      13.9 h 
+35809
+INICIO: llamador
+SM-3MG4D
+INFO  11:43:11,209 ProgressMeter -     5:166574567       8.816267E8     8.4 h           34.0 s       33.4%    25.1 h      16.7 h 
+35810
+INICIO: llamador
+SM-3MG4S
+INFO  11:43:48,344 ProgressMeter -     6:135361408     1.06254196E9     9.6 h           32.0 s       38.2%    25.2 h      15.6 h 
+35811
+INICIO: llamador
+SM-3MG3U
+INFO  11:43:59,957 ProgressMeter -       7:6628702    1.233657027E9     9.9 h           28.0 s       39.5%    25.1 h      15.2 h 
+35812
+INICIO: llamador
+SM-3MG49
+INFO  11:43:56,905 ProgressMeter -      5:71959668       8.816267E8     7.8 h           31.0 s       30.4%    25.8 h      17.9 h 
+35814
+INICIO: llamador
+SM-3MG3Z
+INFO  11:43:28,746 ProgressMeter -      8:90688450     1.39279569E9    11.9 h           30.0 s       47.3%    25.2 h      13.3 h 
+35815
+INICIO: llamador
+SM-3MG5F
+INFO  11:43:38,591 ProgressMeter -      7:15849228    1.233657027E9     9.7 h           28.0 s       39.8%    24.4 h      14.7 h 
+35816
+INICIO: llamador
+SM-3MG58
+INFO  11:43:18,259 ProgressMeter -     3:191059203     4.92449994E8     5.4 h           39.0 s       21.8%    25.0 h      19.6 h 
+35818
+INICIO: llamador
+SM-3MG5T
+INFO  11:43:38,361 ProgressMeter -      4:66446950     6.90472424E8     6.0 h           31.0 s       24.1%    25.0 h      19.0 h 
+35819
+INICIO: llamador
+SM-3MGPZ
+INFO  11:43:40,248 ProgressMeter -      7:43465426    1.233657027E9    10.2 h           29.0 s       40.7%    24.9 h      14.8 h 
+35820
+INICIO: llamador
+SM-3MG5O
+INFO  11:43:18,754 ProgressMeter -      5:51595081       8.816267E8     7.4 h           30.0 s       29.7%    24.7 h      17.4 h 
+35821
+INICIO: llamador
+SM-3MG66
+INFO  11:43:48,769 ProgressMeter -     6:125664231     1.06254196E9     9.6 h           32.0 s       37.9%    25.3 h      15.7 h 
+35822
+INICIO: llamador
+SM-3MG5P
+INFO  11:43:13,600 ProgressMeter -      8:26137233     1.39279569E9    10.7 h           27.0 s       45.2%    23.7 h      13.0 h 
+35823
+INICIO: llamador
+SM-3MG5R
+INFO  11:43:39,594 ProgressMeter -     1:163616854              0.0    74.9 m         7430.0 w        5.2%    23.9 h      22.7 h 
+35824
+INICIO: llamador
+SM-3MGPR
+INFO  11:43:37,044 ProgressMeter -      7:24462045    1.233657027E9     9.9 h           29.0 s       40.1%    24.8 h      14.9 h 
+35826
+INICIO: llamador
+SM-3MGPY
+INFO  11:44:00,783 ProgressMeter -      9:13328921    1.539159712E9    12.4 h           28.0 s       49.5%    25.0 h      12.7 h 
+35827
+INICIO: llamador
+SM-3MG63
+INFO  11:43:23,012 ProgressMeter -      4:45925825     6.90472424E8     5.7 h           29.0 s       23.5%    24.1 h      18.4 h 
+35828
+INICIO: llamador
+SM-3MGPP
+INFO  11:43:48,626 ProgressMeter -      7:27113382    1.233657027E9    10.4 h           30.0 s       40.2%    25.8 h      15.5 h 
+35832
+INICIO: llamador
+SM-3MG54
+INFO  11:44:07,235 ProgressMeter -      7:40775542    1.233657027E9     9.9 h           28.0 s       40.6%    24.5 h      14.5 h 
+35834
+INICIO: llamador
+SM-3MG67
+INFO  11:43:42,811 ProgressMeter -         9:43574    1.539159712E9    12.4 h           28.0 s       49.1%    25.2 h      12.8 h 
+35835
+INICIO: llamador
+SM-3MG5Y
+INFO  11:43:41,850 ProgressMeter -      7:16223812    1.233657027E9     9.7 h           28.0 s       39.8%    24.2 h      14.6 h 
+35836
+INICIO: llamador
+SM-3MGPV
+INFO  11:43:11,727 ProgressMeter -       8:5999372     1.39279569E9    10.8 h           28.0 s       44.6%    24.3 h      13.5 h 
+35837
+INICIO: llamador
+SM-3MGPX
+INFO  11:44:01,643 ProgressMeter -       7:3726200    1.233657027E9     9.7 h           28.0 s       39.4%    24.6 h      14.9 h 
+35838
+INICIO: llamador
+SM-3MG5U
+INFO  11:43:23,119 ProgressMeter -      8:56874569     1.39279569E9    11.4 h           29.0 s       46.2%    24.6 h      13.2 h 
+35839
+INICIO: llamador
+SM-3MG69
+INFO  11:43:40,405 ProgressMeter -     7:121162528    1.233657027E9    10.8 h           31.0 s       43.2%    25.0 h      14.2 h 
+35840
+INICIO: llamador
+SM-3MG6A
+INFO  11:43:25,336 ProgressMeter -     3:156431852     4.92449994E8     5.1 h           37.0 s       20.7%    24.8 h      19.7 h 
+35842
+INICIO: llamador
+SM-3MG5W
+INFO  11:43:55,992 ProgressMeter -      3:63033203     4.92449994E8     4.7 h           34.0 s       17.7%    26.4 h      21.7 h 
+35845
+INICIO: llamador
+SM-3MGPO
+INFO  11:43:38,543 ProgressMeter -     7:145290643    1.233657027E9    10.9 h           31.0 s       44.0%    24.7 h      13.8 h 
+35846
+INICIO: llamador
+SM-3MG61
+INFO  11:43:56,183 ProgressMeter -      6:14449917     1.06254196E9     8.3 h           28.0 s       34.3%    24.3 h      16.0 h 
+35848
+INICIO: llamador
+SM-3MGPN
+INFO  11:43:16,160 ProgressMeter -      6:73663492     1.06254196E9     8.9 h           30.0 s       36.2%    24.5 h      15.6 h 
+35850
+INICIO: llamador
+SM-3MG68
+INFO  11:44:15,488 ProgressMeter -      8:43205223     1.39279569E9    11.7 h           30.0 s       45.8%    25.6 h      13.9 h 
+35851
+INICIO: llamador
+SM-3MG5V
+INFO  11:44:01,711 ProgressMeter -     4:118637857     6.90472424E8     6.2 h           32.0 s       25.8%    24.1 h      17.9 h 
+35852
+INICIO: llamador
+SM-3MG5A
+INFO  11:43:45,646 ProgressMeter -     2:175237333     2.49250621E8     3.6 h           52.0 s       13.5%    26.8 h      23.2 h 
+35853
+INICIO: llamador
+SM-3MGPS
+INFO  11:43:42,479 ProgressMeter -     2:137285890     2.49250621E8     3.1 h           45.0 s       12.3%    25.4 h      22.2 h 
+35855
+INICIO: llamador
+SM-3MG5Z
+INFO  11:44:09,406 ProgressMeter -     8:110496813     1.39279569E9    11.4 h           29.0 s       47.9%    23.7 h      12.4 h 
+35856
+INICIO: llamador
+SM-3MG5E
+INFO  11:43:54,295 ProgressMeter -     5:141431207       8.816267E8     8.0 h           32.0 s       32.6%    24.5 h      16.5 h 
+35859
+INICIO: llamador
+SM-3MG4B
+INFO  11:44:07,516 ProgressMeter -     7:115133774    1.233657027E9    10.7 h           31.0 s       43.0%    24.9 h      14.2 h 
+35860
+INICIO: llamador
+SM-3MG4P
+INFO  11:43:39,294 ProgressMeter -     6:162687576     1.06254196E9     9.6 h           32.0 s       39.1%    24.5 h      14.9 h 
+35861
+INICIO: llamador
+SM-3MG48
+INFO  11:44:14,758 ProgressMeter -     5:149514983       8.816267E8     8.2 h           33.0 s       32.9%    24.9 h      16.7 h 
+35862
+INICIO: llamador
+SM-3MG4N
+INFO  11:43:40,656 ProgressMeter -     7:154536742    1.233657027E9    10.9 h           31.0 s       44.2%    24.6 h      13.7 h 
+35863
+INICIO: llamador
+SM-3MG3O
+WARN  11:43:51,170 ExactAFCalculator - this tool is currently set to genotype at most 6 alternate alleles in a given context, but the context at 7:30334666 has 8 alternate alleles so only the top alleles will be used; see the --max_alternate_alleles argument 
+35866
+INICIO: llamador
+SM-3MG4M
+INFO  11:44:03,493 ProgressMeter -     7:116734085    1.233657027E9    10.8 h           31.0 s       43.0%    25.1 h      14.3 h 
+35867
+INICIO: llamador
+SM-3MG46
+INFO  11:43:24,631 ProgressMeter -      5:79125269       8.816267E8     7.5 h           30.0 s       30.6%    24.6 h      17.0 h 
+35868
+INICIO: llamador
+SM-3MG45
+INFO  11:43:33,815 ProgressMeter -      6:76260675     1.06254196E9     9.4 h           31.0 s       36.3%    25.9 h      16.5 h 
+35869
+INICIO: llamador
+SM-3MG5G
+INFO  11:44:12,431 ProgressMeter -       5:2158266       8.816267E8     7.0 h           28.0 s       28.2%    24.8 h      17.8 h 
+35924
+INICIO: recalibrador
+SM-3MG5J
+INFO  11:44:18,081 ProgressMeter -     2:243188992   1.27190914E8    90.5 m      42.0 s       15.7%     9.6 h       8.1 h 
+35925
+INICIO: recalibrador
+SM-3MG5L
+INFO  11:44:04,034 ProgressMeter -     3:191855943   1.70173511E8     2.0 h      42.0 s       21.8%     9.3 h       7.2 h 
+35926
+INICIO: recalibrador
+SM-3MG55
+INFO  11:44:12,568 ProgressMeter -      X:13127921   4.79744606E8     6.6 h      49.0 s       92.2%     7.2 h      33.5 m 
+35928
+INICIO: recalibrador
+SM-3MG51
+INFO  11:44:11,274 ProgressMeter -      5:25796358   1.90348991E8     2.4 h      45.0 s       28.9%     8.3 h       5.9 h 
+35933
+INICIO: recalibrador
+SM-3MG5H
+INFO  11:44:24,807 ProgressMeter -     13:69258945   3.53091049E8     4.9 h      49.0 s       68.7%     7.1 h       2.2 h 

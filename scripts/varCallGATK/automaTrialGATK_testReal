@@ -1,0 +1,18 @@
+#BSUB-q high                   # Job queue
+#BSUB-o test_4.output               # output is sent to file job.output
+#BSUB-e test_4.err                  # stderr    
+#BSUB-J 6_GATK_X                 # name of the job
+#BSUB-n 16                      # slots
+
+
+# My instructions
+# Changing to the directory where my program is
+cd /home/inmegen/r.garcia/100g/scripts/varCallGATK/scripts
+
+#./mapeador3_bamInit.sh /home/inmegen/r.garcia/100g/scripts/varCallGATK/datosIntermedios 2 corridaX panelY M03540
+./maestro_PerLane_amerindio.sh /home/inmegen/r.garcia/100g/tests/SM-3MG3L 16
+
+# Show the size of the outputfile, and remove the executable
+#ls -l data/output
+#rm run
+
