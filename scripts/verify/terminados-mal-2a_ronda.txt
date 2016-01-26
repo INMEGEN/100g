@@ -1,0 +1,4 @@
+/scratch/inmegen/100g/NHT140485--3/2015.07.29.12_raw_clean_30_bam/bam_30/SM-3MG3M/Sample_SM-3MG3M/SM-3MG3M.final.bam
+/scratch/inmegen/100g/NHT140485--6/2015.08.12_27_17_bam_27_var/Bam_17/SM-3MG5C/SM-3MG5C.final.bam
+/scratch/inmegen/100g/NHT140485--6/2015.08.12_27_17_bam_27_var/Bam_17/SM-3MG5J/SM-3MG5J.final.bam
+/scratch/inmegen/100g/NHT140485--6/2015.08.12_27_17_bam_27_var/Bam_17/SM-3MG51/SM-3MG51.final.bam
