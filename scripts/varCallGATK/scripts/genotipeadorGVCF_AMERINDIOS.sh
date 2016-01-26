@@ -25,8 +25,8 @@ let c2=1
 #orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $3"
 for h in $(find $WORKdir -name "raw.vcf"); do
 	echo $cont
-	echo $IGVdir/igvtools index $h
-	$IGVdir/igvtools index $h
+#	echo $IGVdir/igvtools index $h
+#	$IGVdir/igvtools index $h
 	if [ $cont -eq 1 ]
 	then
 		orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T CombineGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $3"
