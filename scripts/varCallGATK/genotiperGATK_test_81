@@ -1,13 +1,13 @@
 #BSUB-q high                   # Job queue
-#BSUB-o gen_70.output               # output is sent to file job.output
-#BSUB-e gen_70.err                  # stderr    
-#BSUB-J 70_GATK_X                 # name of the job
+#BSUB-o gen_81.output               # output is sent to file job.output
+#BSUB-e gen_81.err                  # stderr    
+#BSUB-J 81_GATK_X                 # name of the job
 #BSUB-n 16                      # slots
 #BSUB-R "span[hosts=1]"
 
 # My instructions
 # Changing to the directory where my program is
-cd /home/inmegen/r.garcia/100g/scripts/varCallGATK/scripts
+cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts
 
 #./mapeador3_bamInit.sh /home/inmegen/r.garcia/100g/scripts/varCallGATK/datosIntermedios 2 corridaX panelY M03540
 ./genotipeadorGVCF_AMERINDIOS.sh /scratch/inmegen/100g /scratch/inmegen/100g/wg_GATK 16 24
