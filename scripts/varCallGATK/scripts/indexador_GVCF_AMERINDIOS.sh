@@ -20,7 +20,12 @@ cd $2
 
 #orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $3"
 for h in $(find $WORKdir -name "raw.vcf"); do
-	echo $IGVdir/igvtools index $h
-	bsub -q medium -e %J.err -o %J.o "$IGVdir/igvtools index $h"
+	if [ -f "${h}.idx" ]
+	then
+		echo "$h ya se tiene indice"
+	else
+		echo $IGVdir/igvtools index $h
+#		bsub -q medium -e %J.err -o %J.o "$IGVdir/igvtools index $h"
+	fi
 done
 

@@ -34,7 +34,7 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 		orden="$orden --variant $h"
 		if [ $cont -gt $4 ]
 		then
-			orden="$orden -o output_${c2}.vcf"
+			orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
 			echo $orden 
 			$orden
 			let eje=2
@@ -47,7 +47,7 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 done
 if [ $eje -eq 1 ]
 then
-	orden="$orden -o output_${c2}.vcf"
+	orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
 	echo $orden
 	$orden
 fi 
@@ -55,7 +55,7 @@ orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/
 for h in $(ls output*vcf); do
 	orden="$orden --variant $h"
 done
-orden="$orden -o final_output.vcf"
+orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
 echo $orden
 $orden
 
