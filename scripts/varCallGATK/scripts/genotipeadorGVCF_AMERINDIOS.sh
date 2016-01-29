@@ -26,7 +26,7 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 	echo $cont
 	if [ $cont -eq 1 ]
 	then
-		orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T CombineGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $3"
+		orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T CombineGVCFs -R $REF/human_g1k_v37_decoy.fasta"
 		let eje=1
 		orden="$orden --variant $h"
 		let cont+=1
