@@ -25,7 +25,7 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 		echo "$h ya se tiene indice"
 	else
 		echo $IGVdir/igvtools index $h
-#		bsub -q medium -e %J.err -o %J.o "$IGVdir/igvtools index $h"
+		bsub -q medium -e %J.err -o %J.o "$IGVdir/igvtools index $h"
 	fi
 done
 
