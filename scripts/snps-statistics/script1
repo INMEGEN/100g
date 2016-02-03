@@ -1,1 +1,0 @@
-bsub -q high -e err2.%J -o out2.%J "zcat /home/inmegen/r.garcia/100g/data/SM-3MG3L/SNP/SM-3MG3L.samtools.snp.annovar.hg19_multianno.xls.gz | wc -l >conteo-variantes-snps-SM-3MG3L.txt"
