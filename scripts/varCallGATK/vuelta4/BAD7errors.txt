@@ -1,0 +1,7 @@
+SM-3MG4K.err	##### ERROR MESSAGE: Exception when processing alignment for BAM index ST-E00126:63:H3W3HCCXX:5:2201:23492:19118 2/2 150b aligned read.
+SM-3MG4T.err	##### ERROR MESSAGE: SAM/BAM file aln_realigned.bam is malformed: java.util.zip.DataFormatException: invalid stored block lengths
+SM-3MG4W.err	##### ERROR MESSAGE: SAM/BAM file aln_realigned.bam is malformed: Read error; BinaryCodec in readmode; file: /scratch/inmegen/100g/NHT140485--6/2015.08.12_27_17_bam_27_var/Bam_17/SM-3MG4W/Sample_SM-3MG4W/aln_realigned.bam
+SM-3MG4Y.err	##### ERROR MESSAGE: SAM/BAM file aln_realigned.bam is malformed: Read error; BinaryCodec in readmode; file: /scratch/inmegen/100g/NHT140485--3/2015.07.29.12_raw_clean_30_bam/bam_30/SM-3MG4Y/Sample_SM-3MG4Y/aln_realigned.bam
+SM-3MG56.err	##### ERROR MESSAGE: SAM/BAM file SM-3MG56.final.bam is malformed: Error de entrada/salida
+SM-3MG5Q.err	##### ERROR MESSAGE: SAM/BAM file aln_recaled2.bam is malformed: Read error; BinaryCodec in readmode; file: /scratch/inmegen/100g/NHT140485--4/2015.07.29_38_bam_68_vari/bam_38/SM-3MG5Q/Sample_SM-3MG5Q/aln_recaled2.bam
+SM-3MG65.err	##### ERROR MESSAGE: SAM/BAM file aln_realigned.bam is malformed: Read error; BinaryCodec in readmode; file: /scratch/inmegen/100g/NHT140485--6/2015.08.12_27_17_bam_27_var/Bam_17/SM-3MG65/Sample_SM-3MG65/aln_realigned.bam
