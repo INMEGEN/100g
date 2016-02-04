@@ -14,7 +14,7 @@ ejemplo:
         exit
 fi
 
-WORKdir=$1
+cd $1
 
 orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $2"
 for h in $(ls output*vcf); do
