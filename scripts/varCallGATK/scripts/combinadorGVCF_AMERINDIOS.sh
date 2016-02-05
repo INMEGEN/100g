@@ -22,11 +22,12 @@ cd $2
 let cont=1
 let eje=1
 let c2=1
+quote=$'\042'
 for h in $(find $WORKdir -name "raw.vcf"); do
 	echo $cont
 	if [ $cont -eq 1 ]
 	then
-		orden="bsub -q high -e %J.err -o %J.o -J ${c2}_GVCF \"java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T CombineGVCFs -R $REF/human_g1k_v37_decoy.fasta"
+		orden="bsub -q high -e %J.err -o %J.o -J ${c2}_GVCF ${quote}java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T CombineGVCFs -R $REF/human_g1k_v37_decoy.fasta"
 		let eje=1
 		orden="$orden --variant $h"
 		let cont+=1
@@ -34,9 +35,12 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 		orden="$orden --variant $h"
 		if [ $cont -gt $3 ]
 		then
-			orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods\""
-			echo $orden 
-			$orden
+			orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods${quote}"
+			echo $orden
+			echo $orden > tmp.sh
+			chmod 777 tmp.sh
+			./tmp.sh
+			rm tmp.sh
 			let eje=2
 			let cont=1
 			let c2+=1
@@ -47,9 +51,12 @@ for h in $(find $WORKdir -name "raw.vcf"); do
 done
 if [ $eje -eq 1 ]
 then
-	orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods\""
+	orden="$orden -o output_${c2}.vcf --disable_auto_index_creation_and_locking_when_reading_rods${quote}"
 	echo $orden
-	$orden
+	echo $orden > tmp.sh
+	chmod 777 tmp.sh
+	./tmp.sh
+	rm tmp.sh
 fi
 
 
