@@ -20,7 +20,8 @@ orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/
 for h in $(ls output*vcf); do
 	orden="$orden --variant $h"
 done
-orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
+#orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
+orden="$orden -o final_output.vcf"
 echo $orden
 $orden
 
