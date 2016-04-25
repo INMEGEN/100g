@@ -6,9 +6,9 @@ use strict;
 #input vcf-file
 my $INPUT = "/scratch/inmegen/100g/wg_GATK/test3/allsamples_final_recaled_snp-indel.vcf";
 #Allele frequency cutoff
-my $EAF=0.05;
+my $EAF=0.00;
 #output file
-my $OUT = "/scratch/inmegen/100g/wg_GATK/SNVs-Allefrequency-0.05.txt";
+my $OUT = "/scratch/inmegen/100g/wg_GATK/SNVs-Allefrequency.txt";
 open (OUT, ">$OUT") || die "No puedo crear el archivo $OUT\n";
 print OUT "Chr\tPOS\tREF\tALT\tAF\n";
 
@@ -21,6 +21,7 @@ chomp($line);
 @fields = split(/\t+/,$line);
 $length = @fields;
 $individuals = $length - 9;
+$individuals = $individuals - 1; #This line was added to remove the indivual SM-3MGPV
 print "File containing $individuals individuals\n";
 print "Output file written in : $OUT\n";
 
@@ -33,8 +34,11 @@ chomp($line);
 
 #Select only the SNVs PASS, get the genotype and concat in @frequency
 @frequency = ();
-if ($fields[6] eq "PASS" && $fields[4] =~ /^[A|C|G|T]$/ && $fields[3] =~ /^[A|C|G|T]$/ ){
+if ($fields[6] eq "PASS" && $fields[3] =~ /^[A|C|G|T]$/ && $fields[4] =~ /^[A|C|G|T]$/ ){
 for ($i=9; $i < $length; $i++){
+	if ($i == 89){ 	#This "if" was added to remove the indivual SM-3MGPV 
+		next;
+        }
 	$genotype = (split(/:+/,$fields[$i]))[0];
 	@alleles = split(/\/+/, $genotype);
 	push(@frequency,@alleles);
@@ -57,4 +61,3 @@ if ($AF >= $EAF){
 }
 close(INN);
 close(OUT);
-

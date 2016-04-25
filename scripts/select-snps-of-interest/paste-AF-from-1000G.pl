@@ -2,6 +2,16 @@
 #It requires the program Tabix imported to the PATH
 
 use strict;
+use Getopt::Long;
+
+#IN input file; GP file that contains the allele frequency, for each variant in the 1000 Genome project; Output file.
+my ($IN,$GP,$OUT);
+
+GetOptions ("af=s"   => \$IN,
+            "gp=s"   => \$GP,
+	    "o=s" => \$OUT) || die("Error in command line arguments\n");
+
+=pod
 #Input file
 my $IN = "/scratch/inmegen/100g/wg_GATK/SNVs-Allefrequency-0.05.txt";
 
@@ -10,6 +20,15 @@ my $GP = "/scratch/inmegen/100g/references/1000g-phase_3-allele-frequency/1000GE
 
 #Output file
 my $OUT = "/scratch/inmegen/100g/wg_GATK/SNVs-Allefrequency-0.05-1000GP.txt";
+
+=cut
+
+if (!$IN || !$GP || !$OUT){ 
+  die "Missing parameters: 
+       -af Input file, with allele frequencies in population
+       -gp 1000Gp file, with allele frequencies downloaded from ensembl
+       -o Output file\n";
+}
 
 #Defining variables
 my ($line,$ref,$alt,$pos,$chr,$IAF,$var,$AFR_AF,$EAS_AF,$SAS_AF,$AMR_AF,$EUR_AF,$rs);
