@@ -1,0 +1,1 @@
+for i in $(ls -d /scratch/inmegen/100g/wg_GATK/perIndividuoGATK/*); do sample=$(echo $i | rev | cut -d "/" -f 1 | rev);  echo  "bsub -o out-$sample -e err-$sample -J $sample \"cd  /scratch/inmegen/100g/variants-statistics; wc -l ${i}/${sample}.ann.canon.vcf | awk '{print \\\$1}' >Total-variants-${sample}.txt\""; done >count-total-variants.sh

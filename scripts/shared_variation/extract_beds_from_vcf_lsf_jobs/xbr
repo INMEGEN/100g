@@ -1,4 +1,5 @@
 #BSUB -q medium
-#BSUB -J 3MGPZ
+#BSUB -J 3MG5L
 
-zcat /home/inmegen/r.garcia/100g/SM-3MGPZ/SNP/SM-3MGPZ.samtools.snp.reformated.vcf.gz | grep -v \# | awk '{print $1,$2,$4,$5}' > /home/inmegen/r.garcia/100g/beds/3MGPZ.bed
+grep -v \# /scratch/inmegen/100g/wg_GATK/perIndividuoGATK/SM-3MG5L/SM-3MG5L_GATK_PASS-snp-indel.vcf | awk '{print $1,$2,$4,$5}' > /scratch/inmegen/100g/shared_variation/3MG5L.bed
+
