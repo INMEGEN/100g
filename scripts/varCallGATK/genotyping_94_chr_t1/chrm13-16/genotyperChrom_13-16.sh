@@ -1,0 +1,4 @@
+bsub -q high -J F-GATK-13 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 13"
+bsub -q high -J F-GATK-14 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 14"
+bsub -q high -J F-GATK-15 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 15"
+bsub -q high -J F-GATK-16 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 16"

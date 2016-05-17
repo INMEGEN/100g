@@ -1,0 +1,2 @@
+bsub -q high -J F-GATK-7 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 7"
+bsub -q high -J F-GATK-10 -e %J_gen2.err -o %J_gen2.out -n 16 -N -u fpvillatoro@gmail.com "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./genotipeadorGVCF_AMERINDIOS_3.5.sh /scratch/inmegen/100g/wg_GATK/test3 2 10"

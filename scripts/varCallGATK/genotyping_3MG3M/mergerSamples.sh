@@ -1,0 +1,1 @@
+bsub -q high -e %J_merge.err -o %J_merge.out -J merge-samples "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./tabixerMergerSamples_AMERINDIOS.sh /scratch/inmegen/100g/wg_GATK/perIndividuoGATK"

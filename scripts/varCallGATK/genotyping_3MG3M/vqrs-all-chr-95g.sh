@@ -1,0 +1,1 @@
+bsub -q high -J VQRS-95g -e %J_vqrs.err -o %J_vqrs.out -n 16 "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./VQRS.sh /scratch/inmegen/100g/wg_GATK/test5_with3MG3M/allsamples_final.vcf 2"
