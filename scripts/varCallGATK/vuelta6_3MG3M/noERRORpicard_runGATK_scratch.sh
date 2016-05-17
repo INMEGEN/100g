@@ -1,0 +1,1 @@
+bsub -q high -e SM-3MG3M.err -o SM-3MG3M.o -n 16 -R "span[hosts=1]" "cd /home/inmegen/r.garcia/100g/scripts/varCallGATK/scripts; ./maestro_PerLane_amerindio.sh /scratch/inmegen/100g/SM-3MG3M_wg_alignment/SM-3MG3M 16" 
