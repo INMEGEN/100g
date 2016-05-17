@@ -3,6 +3,7 @@
 REF="/home/inmegen/r.garcia/100g/references/GRCh37/genome"
 #FASTQCdir="/home/shared/bin/FastQC"
 GATKdir="/home/inmegen/r.garcia/src/GATK"
+GATK35dir="/home/inmegen/r.garcia/src/GATK_3.5"
 SNPEFFdir="/home/inmegen/r.garcia/src/snpEff"
 SNPEFFconfig="/home/inmegen/r.garcia/100g/snpEff"
 #TRIMdir="/home/shared/bin/Trimmomatic-0.33"
