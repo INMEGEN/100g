@@ -24,8 +24,8 @@ for h in $(ls); do
 	then
 		cd $h
 		echo Procesando $h
-		perl $perlDIR/variantDistances.pl filtered.vcf $2 | cut -f-2,4-5,10- > algo.txt
-		perl $perlDIR/variantCorrector.pl algo.txt filtered.vcf $REF/hg19.fa > filtered_final.vcf
+		perl $perlDIR/variantDistances.pl ${h}_GATK_PASS-snp-indel.vcf $2 | cut -f-2,4-5,10- > algo.txt
+		perl $perlDIR/variantCorrector.pl algo.txt ${h}_GATK_PASS-snp-indel.vcf $REF/human_g1k_v37_decoy.fasta > ${h}_filtered_final.vcf
 		if [ -f "algo.txt" ]
 		then
 			rm algo.txt

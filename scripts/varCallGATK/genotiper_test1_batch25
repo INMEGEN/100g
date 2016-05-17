@@ -1,7 +1,7 @@
 #BSUB-q high                   # Job queue
-#BSUB-o geno_25.output               # output is sent to file job.output
-#BSUB-e geno_25.err                  # stderr    
-#BSUB-J 25_GATK_X                 # name of the job
+#BSUB-o Xgeno_25.output               # output is sent to file job.output
+#BSUB-e Xgeno_25.err                  # stderr    
+#BSUB-J 25_GATK_1                 # name of the job
 #BSUB-n 16                      # slots
 #BSUB-R "span[hosts=1]"
 
@@ -15,4 +15,8 @@ cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts
 # Show the size of the outputfile, and remove the executable
 #ls -l data/output
 #rm run
-
+####### VERSION
+#with code:
+#
+#orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
+#######

@@ -16,12 +16,12 @@ fi
 
 cd $1
 
-orden="java -Xmx16g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $2"
+orden="java -Xmx60g -jar $GATKdir/GenomeAnalysisTK.jar -T GenotypeGVCFs -R $REF/human_g1k_v37_decoy.fasta -nt $2 -L $3"
 for h in $(ls output*vcf); do
 	orden="$orden --variant $h"
 done
-#orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
-orden="$orden -o final_output.vcf"
+orden="$orden -o final_output.vcf --disable_auto_index_creation_and_locking_when_reading_rods"
+#orden="$orden -o final_output.vcf"
 echo $orden
 $orden
 
