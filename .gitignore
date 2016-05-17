@@ -59,3 +59,18 @@ target/
 # varCallGATK logs LSF
 *.err
 *.output
+*chrSplit.out
+*gzip.out
+*gen.out
+*gen2.out
+*vqrs.out
+*concat.out
+*merge.out
+*wgFASE.out
+*cp3chrom.out
+*cp2chrom.out
+*cp.out
+*split.out
+r3valid.err*
+r3valid.o*
+SM-3MG*.o
