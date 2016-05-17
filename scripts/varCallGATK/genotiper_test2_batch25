@@ -1,0 +1,24 @@
+#BSUB-q medium                   # Job queue
+##SUB-o Zgeno_25.output               # output is sent to file job.output
+#BSUB-e Zgeno_25.err                  # stderr    
+#BSUB-J 25_GATK_3                 # name of the job
+#BSUB-n 16                      # slots
+#BSUB-R "span[hosts=1]"
+#BSUB-M 125829120
+#BSUB-m cgcompute022
+
+# My instructions
+# Changin7 to the directory where my program is
+cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts
+
+#./mapeador3_bamInit.sh /home/inmegen/r.garcia/100g/scripts/varCallGATK/datosIntermedios 2 corridaX panelY M03540
+./genotipeadorGVCF_AMERINDIOS.sh /scratch/inmegen/100g/wg_GATK/test2 16 
+
+# Show the size of the outputfile, and remove the executable
+#ls -l data/output
+#rm run
+#############
+#with run:
+#
+#orden="$orden -o final_output.vcf"
+#############
