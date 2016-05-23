@@ -1,7 +1,7 @@
 #BSUB-q high                   # Job queue
-#BSUB-o Xgeno_25.output               # output is sent to file job.output
-#BSUB-e Xgeno_25.err                  # stderr    
-#BSUB-J 25_GATK_1                 # name of the job
+#BSUB-o Xgeno_94.output               # output is sent to file job.output
+#BSUB-e Xgeno_94.err                  # stderr    
+#BSUB-J 94_GATK_22                 # name of the job
 #BSUB-n 16                      # slots
 #BSUB-R "span[hosts=1]"
 
@@ -10,7 +10,7 @@
 cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts
 
 #./mapeador3_bamInit.sh /home/inmegen/r.garcia/100g/scripts/varCallGATK/datosIntermedios 2 corridaX panelY M03540
-./genotipeadorGVCF_AMERINDIOS.sh /scratch/inmegen/100g/wg_GATK/test1 16 
+./genotipeadorGVCF_AMERINDIOS.sh /scratch/inmegen/100g/wg_GATK/comProduction 16 22
 
 # Show the size of the outputfile, and remove the executable
 #ls -l data/output

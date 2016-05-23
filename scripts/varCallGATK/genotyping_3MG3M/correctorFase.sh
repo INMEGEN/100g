@@ -1,0 +1,1 @@
+bsub -q high -e %J_wgFASE.err -o %J_wgFASE.out -J wg4phase "cd /home/inmegen/r.garcia/gh/100g_rgalindor/scripts/varCallGATK/scripts/; ./correctorDEfase.sh /scratch/inmegen/100g/wg_GATK/perIndividuoGATK 4"
