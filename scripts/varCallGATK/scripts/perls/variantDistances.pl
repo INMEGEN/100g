@@ -35,7 +35,7 @@ open(FI,$ARGV[0])or die $!;
 while(<FI>){
 	if($_ =~/^[^#]/){
 		@lin=split("\t",$_);
-		if(exists $var{$lin[0]}){
+		if(exists $var{$lin[0]}[0]){
 			$var{$lin[0]}[$i]=$lin[1];
 			$dif=$var{$lin[0]}[$i]-$var{$lin[0]}[$i-1];
 			if($dif < $ARGV[1] ){
@@ -45,8 +45,10 @@ while(<FI>){
 			$i+=1;
 		}
 		else{
+#			print "\$var\{$lin[0]\}\[0\]=$lin[1]\t$i\n";
 			$var{$lin[0]}[0]=$lin[1];
 			$i=1;
 		}
 	}
 }
+close(FI);

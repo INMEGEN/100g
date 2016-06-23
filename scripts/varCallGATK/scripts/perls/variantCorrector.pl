@@ -38,7 +38,7 @@ while(<FI>){
 		@lig=split(":",$lin[4]);
 		@nig=split("_",$lig[5]);
 #	print "vor es $lin[0] $lig[6] .. $nig[0]\n";
-		$vor{$lin[0]}{$nig[0]}=$nig[1]."\t".$lin[2]."\t".$nig[2]."\t".$lin[3];
+		$vor{$lin[0]}{$nig[0]}=$nig[1]."\t".$lin[2]."\t".$nig[2]."\t".$lin[3]."\t".$lig[4];
 		$pos{$lin[0]}{$nig[0]}=$lin[1];
 	}
 	else{
@@ -54,35 +54,60 @@ while(<VCF>){
 		if(exists $var{$lin[0]}{$lin[1]}){
 #print "ya existe\n";
 #print $_;
+			if($flag==1){
+				print $_;
+			}
+			$flag=0;
 			next;
 		}
 		elsif(exists $vor{$lin[0]}{$lin[1]}){
-
+##bloque nuevo
+#
+#			$cadena=magia($_,$vor{$lin[0]}{$lin[1]},\%pos,$ARGV[2]);
+#
+			@lig=split(":",$lin[9]);
+			@nig=split(/\|/,$lig[4]);
+#			@lon=split("\t",$vor{$lin[0]}{$lin[1]});
+#print "$lon[0]\n";
+#			@log=split(":",$lon[4]);
+#			@nog=split("|",$log[4]);
+#			print "No son iguales porque $nig[0] \!\= $nog[0] $nig[1] \!\= $nog[1] \n";
+####
 			@nucs=split("\t",$vor{$lin[0]}{$lin[1]});
+			@alte=split(",",$nucs[3]);
 			$dist=$pos{$lin[0]}{$lin[1]}-$lin[1];
 
+			@nog=split(/\|/,$nucs[4]);
+			if (($nig[0]!=$nog[0])&&($nig[1]!=$nog[1])){
+				print $_;
+				$flag=1;
+				next;
+			}
 			if($dist>1){
 				open(OUT, ">tmp.bed");
 				print OUT $lin[0]."\t".$lin[1]."\t".$pos{$lin[0]}{$lin[1]}."\n";
 				close(OUT);
 				$comando='bedtools getfasta -fi '.$ARGV[2].' -bed tmp.bed -fo otro.fa';
-#				system('bedtools getfasta -fi /scratch-compute-0-1/carmen_alaez/referencias/genome/hg19.fa -bed tmp.bed -fo otro.fa');
 				system($comando);
 				open(FA, "otro.fa") or die $!;
 				@fa=<FA>;
 				close(FA);
 				$ref=substr($fa[1],0,-2);
 				$rnuc=$nucs[0].$ref.$nucs[1];
-				$anuc=$nucs[2].$ref.$nucs[3];
+				$anuc=$nucs[2].$ref;
 			}
 			else{
                                 $rnuc=$nucs[0].$nucs[1];
-                                $anuc=$nucs[2].$nucs[3];
-
+				$anuc=$nucs[2];
 			}
-
-                        $lin[3]=$rnuc;
-                        $lin[4]=$anuc;
+			$aanuc="";
+			for($k=0;$k<=$#alte;$k++){
+				$aanuc.=$anuc.$alte[$k].",";
+			}
+			chop($aanuc);
+	
+			$lin[3]=$rnuc;
+                        $lin[4]=$aanuc;
                         $vcf=join("\t", @lin);
                         print $vcf;
 		}
@@ -95,3 +120,48 @@ while(<VCF>){
 	}
 }
 close(VCF);
+
+
+####$uno=$_;$dos=$vor{$lin[0]}{$lin[1]};%pos=$pos;$cuatro=$ARGV[2];
+sub magia($uno,$dos,$tres,$cuatro){
+	$uno=
+	@lin=split("\t",$uno);
+	@lig=split(":",$lin[9]);
+	@nig=split(/\|/,$lig[4]);
+	@nucs=split("\t",$dos);
+	@alte=split(",",$nucs[3]);
+	$dist=$pos{$lin[0]}{$lin[1]}-$lin[1];
+	@nog=split(/\|/,$nucs[4]);
+	if (($nig[0]!=$nog[0])&&($nig[1]!=$nog[1])){
+		return $_;
+		$flag=1;
+		next;
+	}
+	if($dist>1){
+		open(OUT, ">tmp.bed");
+		print OUT $lin[0]."\t".$lin[1]."\t".$pos{$lin[0]}{$lin[1]}."\n";
+		close(OUT);
+		$comando='bedtools getfasta -fi '.$cuatro.' -bed tmp.bed -fo otro.fa';
+		system($comando);
+		open(FA, "otro.fa") or die $!;
+		@fa=<FA>;
+		close(FA);
+		$ref=substr($fa[1],0,-2);
+		$rnuc=$nucs[0].$ref.$nucs[1];
+		$anuc=$nucs[2].$ref;
+	}
+	else{
+		$rnuc=$nucs[0].$nucs[1];
+		$anuc=$nucs[2];
+	}
+	$aanuc="";
+	for($k=0;$k<=$#alte;$k++){
+		$aanuc.=$anuc.$alte[$k].",";
+	}
+	chop($aanuc);
+	$lin[3]=$rnuc;
+	$lin[4]=$aanuc;
+	$vcf=join("\t", @lin);
+	return $vcf;
+}
+
