@@ -15,6 +15,7 @@ PICARDdir="/home/inmegen/r.garcia/src/picard/picard-tools-1.89"
 #CANCER="/home/shared/referencias/cancer"
 TABIXdir="/home/inmegen/r.garcia/src/samtools-1.2/htslib-1.2.1"
 IGVdir="/home/inmegen/r.garcia/src/IGVTools"
+exonDIR="/scratch/inmegen/100g/wg_GATK/files"
 perlDIR=`pwd`
 perlDIR=${perlDIR}/perls
 
