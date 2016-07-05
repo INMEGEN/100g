@@ -115,38 +115,6 @@ heatmap.2a(M[-1,-93],
   )
 dev.off()
 
-# classic heatmap
-pdf("heatmap1.pdf",width=200,height=200)
-heatmap.2(matrixS,
-	density.info="density",  # turns off density plot inside color legend
-	trace="none",         # turns off trace lines inside the heat map
-	col=colfunc(length(table(jindex_sif[,3]))),       # use on color palette defined earlier 
-#	breaks=col_breaks,    # enable color transition at specified limits
-	cexCol =6,    # Tamaño de letra de las columnas
-	cexRow =6,    # Tamaño de letra de los renglones
-	margins =c(26,25),     # widens margins around plot
-	)
-dev.off()
-
-# classic dendrogram
-Md <- dist(matrixS, method= "minkowski",  upper = TRUE, p=2)
-Mc <- hclust(Md, method = "complete")
-pdf("dendrograma1.pdf",width=10,height=10)
-ggdendrogram(Mc, rotate = TRUE, size = 4, theme_dendro = FALSE, color = "black")
-dev.off()
-
-# colored dendrogram
-pdf("color_dendrograma1.pdf",width=20,height=8)
-hc = hclust(dist(matrixS))
-op = par(bg = "gray15")
-A2Rplot(Mc, 
-	k = 6, 
-	boxes = FALSE, 
-	col.up = "gray50", 
-	col.down = c("#d73027", "#fc8d59", "#fee090", "#e0f3f8", "#91bfdb", "#4575b4")
-	)
-dev.off()
-
 # Trianglular heatmap ordered
 Mx <- matrixS[Mc$order,Mc$order]
 Mx[lower.tri(Mx,diag = TRUE)] <- NA
@@ -172,4 +140,58 @@ heatmap.2a(Mx,
   labCol = labelsB,
   )
 dev.off()
+
+
+# classic heatmap
+pdf("heatmap1.pdf",width=200,height=200)
+heatmap.2(matrixS,
+	density.info="density",  # turns off density plot inside color legend
+	trace="none",         # turns off trace lines inside the heat map
+	col=colfunc(length(table(jindex_sif[,3]))),       # use on color palette defined earlier 
+#	breaks=col_breaks,    # enable color transition at specified limits
+	cexCol =6,    # Tamaño de letra de las columnas
+	cexRow =6,    # Tamaño de letra de los renglones
+	margins =c(26,25),     # widens margins around plot
+	)
+dev.off()
+
+# classic dendrogram
+Md <- dist(matrixS, method= "minkowski",  upper = TRUE, p=2)
+Mc <- hclust(Md, method = "complete")
+pdf("dendrograma1.pdf",width=10,height=10)
+ggdendrogram(Mc, rotate = TRUE, size = 4, theme_dendro = FALSE, color = "black")
+dev.off()
+
+# colored dendrogram
+pdf("color_dendrograma1.pdf",width=20,height=12)
+hc = hclust(dist(matrixS))
+op = par(bg = "gray15")
+A2Rplot(Mc, 
+	k = 6, 
+	boxes = FALSE, 
+	col.up = "gray50", 
+	col.down = c("#d73027", "#fc8d59", "#fee090", "#e0f3f8", "#91bfdb", "#4575b4")
+	)
+dev.off()
+
+
+
+##### cool dendrogram
+library(ape)
+# vector of colors
+mypal = c("#d73027", "#fc8d59", "#9900ff", "#006666", "#663300", "#4575b4")
+# cutting dendrogram in 6 clusters
+clus = cutree(hc, 6)
+# plot
+# Size reflects miles per gallon
+pdf(file="circular_dendrograma.pdf",width=20,height=20)
+op = par(bg = "#E8DDCB")
+plot(as.phylo(hc), 
+      type = "fan", 
+      tip.color = mypal[clus], 
+      label.offset = 0, 
+      #cex = log(jindex_sif[,3], 10), 
+      col = "blue")
+dev.off()
+
 
