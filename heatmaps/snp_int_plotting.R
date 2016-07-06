@@ -1,42 +1,31 @@
-
-library(corrplot)
-library(gplots)
-library(gtools)
 library(ggdendro)
-library(RColorBrewer)
-library(stats)
-library(Matrix)
-
+library(gtools)
+library(ape)
 source("heatmap.2a.R")
 source("A2Rplot.R")
 
-
-
-# jindex_sif <- read.table("jacaressif.txt", sep = "\t", header = TRUE, )
+# Load data
 
 jinM <- read.table("jinx_matrix.tsv", sep = "\t", header = FALSE)
 jinM <- as.matrix(jinM)
 dim(jinM)
 sample_names <- read.table("sample_names.tsv", header = FALSE)
-sn <- sample_names[,2]
-names(sn)<-sample_names[,1]
-names(sn)
-rownames(jinM) <- sn
-colnames(jinM) <- sn
+rownames(jinM) <- sample_names[,2]
+colnames(jinM) <- sample_names[,2]
 
+# classic dendrogram
 # dist metodos = "euclidean", "maximum", "manhattan", "canberra", "binary" or "minkowski"
 # Métodos de agrupamiento = "ward.D", "ward.D2", "single", "complete", "average" (= UPGMA), "mcquitty" (= WPGMA), "median" (= WPGMC) or "centroid" (= UPGMC).
 
-
-# classic dendrogram
 Md <- dist(jinM, method= "manhattan",  upper = TRUE, p=2)
 Mc <- hclust(Md, method = "ward.D")
+#png("dendrograma.png",width=1000,height=1000, res= 100, type = "quartz")
 pdf("dendrograma.pdf",width=10,height=10)
 ggdendrogram(Mc, rotate = TRUE, size = 4, theme_dendro = FALSE, color = "black")
 dev.off()
 
 # colored dendrogram
-pdf("color_dendrograma.pdf",width=20,height=12)
+png("color_dendrograma.png",width=2000,height=1200, res= 100, type = "quartz")
 hc = hclust(dist(jinM, method= "manhattan",),method = "ward.D")
 op = par(bg = "gray15")
 A2Rplot(hc, 
@@ -49,8 +38,8 @@ A2Rplot(hc,
 dev.off()
 
 M <- jinM
-labelsA <- as.character(sn)
-labelsB <- as.character(sn)
+labelsA <- as.character(sample_names[,2])
+labelsB <- as.character(sample_names[,2])
 labelsA[1]<- c(" ")
 labelsB[93]<- c(" ")
 
@@ -66,17 +55,16 @@ col_breaks = c(seq(0.47540, 0.54190, length=100),
     seq(0.555131, 0.74110, length=100))
 
 
-
+# Optional bi-color palette
 colfunc <- colorRampPalette(c("blue", "red"))
 
 # Trianglular heatmap 
 M[lower.tri(M,diag = TRUE)] <- NA
 M <- t(M)
 
-pdf("triangulo.pdf",width=200,height=200)
+#png("triangulo.png",width=5000,height=5000, type = "quartz")
+pdf("triangulo.pdf",width=150,height=150)
 heatmap.2a(M,
-  #cellnote = M,  # same data set for cell labels
-  #notecol="black",      # change font color of cell labels to black
   density.info="none",  # turns off density plot inside color legend
   trace="none",         # turns off trace lines inside the heat map
   margins =c(26,25),     # widens margins around plot
@@ -101,10 +89,9 @@ dev.off()
 Mx <- jinM[Mc$order,Mc$order]
 Mx[lower.tri(Mx,diag = TRUE)] <- NA
 Mx <- t(Mx)
-pdf("ordered_triangulo.pdf",width=200,height=200)
+#png("ordered_triangulo.png",width = 5000, height = 5000, type = "quartz")
+pdf("ordered_triangulo.pdf", width = 150, height = 150)
 heatmap.2a(Mx,
-  #cellnote = M,  # same data set for cell labels
-  #notecol="black",      # change font color of cell labels to black
   density.info="density",  # turns off density plot inside color legend
   trace="none",         # turns off trace lines inside the heat map
   margins =c(26,25),     # widens margins around plot
@@ -115,7 +102,7 @@ heatmap.2a(Mx,
   Colv="NA",            # turn off column clustering
   cexCol =4,    # Tamaño de letra de las columnas
   cexRow =4,    # Tamaño de letra de los renglones
-  key=TRUE,    
+  key=FALSE,    
   Rowv=FALSE,
   offsetRow = 23,
   offsetCol = 1,
@@ -126,7 +113,7 @@ dev.off()
 
 
 # classic heatmap
-pdf("heatmap.pdf",width=200,height=200)
+png("heatmap.png",width=200,height=200, )
 heatmap.2(as.matrix(jinM),
 	density.info="density",  # turns off density plot inside color legend
       key=TRUE,
@@ -144,13 +131,10 @@ dev.off()
 
 
 ##### cool dendrogram
-library(ape)
-# vector of colors
-mypal = c('#bd1e24','#e97600','#007256','#7284b7','#964f8e','#0067a7','#172035','#a0333a')
-# cutting dendrogram in 6 clusters
-clus = cutree(hc, 8)
-# plot
-# Size reflects miles per gallon
+
+mypal = c('#bd1e24','#e97600','#7284b7','#964f8e','#0067a7','#172035','#a0333a','#007256')
+clus = cutree(hc, 8) # cutting dendrogram in 6 clusters
+#png(file="circular_dendrograma.png",width=2000,height=2000, res = 200, type = "quartz")
 pdf(file="circular_dendrograma.pdf",width=20,height=20)
 op = par(bg = "#E8DDCB")
 plot(as.phylo(hc), 
