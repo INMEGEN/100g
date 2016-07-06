@@ -1,5 +1,6 @@
 library(ggdendro)
 library(gtools)
+library(gplots)
 library(ape)
 source("heatmap.2a.R")
 source("A2Rplot.R")
@@ -113,9 +114,10 @@ dev.off()
 
 
 # classic heatmap
-png("heatmap.png",width=200,height=200, )
+#png("heatmap.png",,width = 5000, height = 5000)
+pdf("heatmap.pdf",width=150,height=150)
 heatmap.2(as.matrix(jinM),
-	density.info="density",  # turns off density plot inside color legend
+	density.info="density",  #density plot inside color legend
       key=TRUE,
       trace="none",         # turns off trace lines inside the heat map
 	#col=colfunc(length(table(jindex_sif[,3]))),       # use on color palette defined earlier 
