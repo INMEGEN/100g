@@ -1,3 +1,4 @@
+from experiment import samples, paths
 from itertools import combinations
 
 encabezado = """
@@ -19,42 +20,12 @@ Queue
 
 """
 
-pickles = [
-    'HG00311.pickle',
-    'HG00479.pickle',
-    'HG02610.pickle',
-    'SM-3MG3P.pickle',
-    'SM-3MG3R.pickle',
-    'SM-3MG3V.pickle',
-    'SM-3MG45.pickle',
-    'SM-3MG46.pickle',
-    'SM-3MG47.pickle',
-    'SM-3MG4C.pickle',
-    'SM-3MG4E.pickle',
-    'SM-3MG4H.pickle',
-    'SM-3MG4J.pickle',
-    'SM-3MG4K.pickle',
-    'SM-3MG51.pickle',
-    'SM-3MG52.pickle',
-    'SM-3MG53.pickle',
-    'SM-3MG55.pickle',
-    'SM-3MG56.pickle',
-    'SM-3MG5A.pickle',
-    'SM-3MG5E.pickle',
-    'SM-3MG5L.pickle',
-    'SM-3MG5N.pickle',
-    'SM-3MG5O.pickle',
-    'SM-3MG5V.pickle',
-    'SM-3MG5Y.pickle',
-    'SM-3MG5Z.pickle',
-    'SM-3MG63.pickle',
-    'SM-3MG66.pickle',
-    'SM-3MG67.pickle',
-    'SM-3MG68.pickle',
-    'SM-3MG6A.pickle',
-    'SM-3MG6B.pickle',
-    'SM-3MGPP.pickle',]
+pickles = ["%s.pickle" % s for s in samples.amerindian]
+pickles += ["%s.pickle" % s for s in samples.asian]
+pickles += ["%s.pickle" % s for s in samples.african]
+pickles += ["%s.pickle" % s for s in samples.european]
 
 print encabezado
+
 for pair in combinations(pickles,2):
     print plantilla.format(s1=pair[0], s2=pair[1])
