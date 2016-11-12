@@ -48,4 +48,3 @@ for s in all:
     with open("%s/%s.pickle" % (paths.outdir, s), 'w') as p:
         v = set(all[s])
         pickle.dump(v, p)
-    
