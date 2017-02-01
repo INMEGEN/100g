@@ -1,0 +1,21 @@
+#!/bin/bash
+rm Input_files/BAMs/Batch_*
+
+find Input_files/DISKs/ -name "*.final.bam" | grep -v "SM-3MGPV" | grep -v "SM-3MG3M" > Input_files/sample_index.txt
+
+sample_n=$(wc -l Input_files/sample_index.txt | cut -d" " -f1)
+
+echo "[] $sample_n Bams for batching"
+
+batch_content=$(echo $sample_n/$1 | bc -l)
+
+echo "[] $batch_content samples per batch"
+
+for batch_number in $(seq 01 $1) #{01..19}
+do
+echo "[]indexando batch $batch_number"
+gawk -v batch_number="$batch_number" -v batch_content="$batch_content" '
+BEGIN {ORS=" ";}
+NR/batch_content <= batch_number && NR/batch_content > batch_number-1 {print $0}
+' Input_files/sample_index.txt > Input_files/BAMs/Batch_$batch_number
+done
