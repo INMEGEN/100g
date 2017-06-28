@@ -74,3 +74,8 @@ target/
 r3valid.err*
 r3valid.o*
 SM-3MG*.o
+
+# Sensible data
+Etnias_IDs_secuenciados.txt
+Datos95g.csv
+Rugplot100g.svg
